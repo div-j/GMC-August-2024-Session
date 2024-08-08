@@ -1,0 +1,33 @@
+<html>
+<head>
+ <title>about me></title>
+
+
+</head>
+
+<body>
+
+
+ <center> <h1>Nweke Francis Chinedu</h1>
+<em>francisnweke875@gmail.com</em><br>
+<em>07061469467<em></center>
+
+
+<img src="C:\Users\USER\Desktop\fullstack\Front-End\html\images/frank.jpg" alt="frank" style="width:250px;height:250px;">
+
+</body>
+
+  <hr />
+  <br>
+  <h2>Hobby</h2>
+  <ul>
+    <li>Playing Video Games</li>
+    <li>Playing Volley Ball</li>
+    <li>coding</li>
+    <li>Programming</li>
+  
+  </ul>
+<hr>
+  
+
+</body>
