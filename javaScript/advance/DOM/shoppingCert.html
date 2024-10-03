@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+            gold: "#DAA520",
+            grey: "#808080",
+          },
+          screens:{
+            small: '600px',
+          }
+        },
+      },
+    };
+  </script>
+
+</head>
+<body>
+    <nav class="sticky top-0">
+
+    <ul class="bg-blue-800 flex justify-between p-2 text-white">
+        <ul class="flex space-x-6">
+          <li class="hover:text-blue-200 cursor-pointer">Home</li>
+          <li class="hover:text-blue-200 cursor-pointer">About</li>
+          <li class="hover:text-blue-200 cursor-pointer">Contact</li>
+        </ul>
+
+        <li id="cart-toggle" onclick="toggleCart()" class="hover:text-blue-200 cursor-pointer relative float-right ">
+          <i class="bi bi-cart"></i>
+          <span id="cartCount"
+            class="absolute bg-red-500 -top-2 -right-2 rounded-full text-xs flex items-center justify-center w-4 h-4"
+            >0</span
+          >
+        </li>
+      </ul>
+    </nav>
+   
+    <main class="container mx-auto my-8 w-3/4 ">
+      <!-- cart section -->
+      <aside id="cartContainer" class=" hidden mb-4" >
+        <h1 class="text-2xl font-bold mb-4">Cart</h1>
+        <section id="cart" class=" ">
+            <p class="text-red-500 text-xs"> 😏 Cart  is empty ✕</p>
+
+        </section>
+        <p id="total" class="mt-4 font-bold">Total: $0.00</p>
+
+
+    </aside>
+
+    
+        <section>
+          <h1 class="text-3xl font-bold mb-4">Products</h1>
+          <div id="pl" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          </div>
+        </section>
+
+      </main>
+    <script>
+         products = [
+        {
+          id: 1,
+          name: "Wireless Bluetooth Headphones",
+          price: 49.99,
+          category: "Electronics",
+          description:
+            "High-quality wireless headphones with noise-cancelling feature and up to 20 hours of battery life.",
+        },
+        {
+          id: 2,
+          name: "Smart LED TV 50 inch",
+          price: 399.99,
+          category: "Electronics",
+          description:
+            "50-inch 4K Ultra HD Smart LED TV with built-in apps and streaming services.",
+        },
+        {
+          id: 3,
+          name: "Stainless Steel Water Bottle",
+          price: 19.99,
+          category: "Home & Kitchen",
+          description:
+            "Reusable stainless steel water bottle with a 750ml capacity and leak-proof lid.",
+        },
+        {
+          id: 4,
+          name: "Gaming Laptop",
+          price: 1299.99,
+          category: "Computers",
+          description:
+            "High-performance gaming laptop with 16GB RAM, 512GB SSD, and NVIDIA GeForce RTX graphics.",
+        },
+        {
+          id: 5,
+          name: "Running Shoes",
+          price: 69.99,
+          category: "Sports & Outdoors",
+          description:
+            "Lightweight and durable running shoes with cushioned soles for extra comfort.",
+        },
+        {
+          id: 6,
+          name: "Coffee Maker",
+          price: 89.99,
+          category: "Home & Kitchen",
+          description:
+            "Automatic drip coffee maker with programmable settings and a 12-cup capacity.",
+        },
+        {
+          id: 7,
+          name: "Wireless Mouse",
+          price: 24.99,
+          category: "Computers",
+          description:
+            "Ergonomic wireless mouse with adjustable DPI and long-lasting battery life.",
+        },
+        {
+          id: 8,
+          name: "Electric Standing Desk",
+          price: 299.99,
+          category: "Furniture",
+          description:
+            "Height-adjustable electric standing desk with memory presets and a spacious desktop.",
+        },
+        {
+          id: 9,
+          name: "Organic Cotton Bed Sheets",
+          price: 59.99,
+          category: "Home & Kitchen",
+          description:
+            "Soft and breathable organic cotton bed sheets, available in queen and king sizes.",
+        },
+        {
+          id: 10,
+          name: "Portable Bluetooth Speaker",
+          price: 39.99,
+          category: "Electronics",
+          description:
+            "Compact and waterproof Bluetooth speaker with a 10-hour battery life and powerful bass.",
+        },
+      ];
+
+      function displyProduct() {
+        const productList = document.getElementById('pl');
+        products.forEach((product) => {
+            const prodDiv = document.createElement('div');
+            prodDiv.classList = "bg-white p-4 rounded-md shadow"
+            prodDiv.innerHTML = `
+                  <h3 class="font-bold text-xl">${product.name}</h3>
+                <p>${product.description}</p>
+                <p class="text-lg mb-4">Price: $${product.price}</p>
+                <buttton onClick= "addTocart(${product.id})" class=" px-6 py-2 bg-blue-500 text-white rounded-md">Add to Cart</buttton>
+            `
+            productList.appendChild(prodDiv);
+        }); 
+        
+      }
+      
+      let cartList = []
+
+      function addTocart(id) {
+      const cartItem = cartList.find((cartProduct)=> cartProduct.id === id)
+      if (cartItem) {
+        // cartItem.qty++
+      }else {
+        const prod =  products.find( (product)=>  product.id == id )
+        cartList.push({...prod,qty:1})
+      }
+      if (!cartList.includes(cartItem)) {
+        displayCart()
+      }
+
+      cartCount()
+
+      }
+
+      function displayCart() {
+       let cartElem = document.getElementById('cart')
+       cartElem.innerHTML = ''
+        let total = 0
+        
+        cartList.forEach((cartItem)=>{
+            const cartDiv = document.createElement('div');
+            cartDiv.className = "flex flex-col small:flex-row  justify-between shadow py-4 px-2"
+            cartDiv.innerHTML = `
+               
+                    <p class="mb-2">${cartItem.name} - $${cartItem.price.toFixed(2)} x ${cartItem.qty}</p>
+
+                    <div >
+                      <button onclick="removeItem(${cartItem.id})" class="bg-red-500 px-2 py-1 text-white rounded-md"><i class="bi text-white bg-red-500 px-1 bi-trash"></i></button>
+                      <button onclick = "updateQty(${cartItem.id},-1)"   class="bg-blue-500 px-2 py-1 text-white ml-2 rounded-md">-</button>
+                      <button onclick = "updateQty(${cartItem.id},1)" class="bg-gray-500 px-2 py-1 text-white ml-2 rounded-md">+</button>
+                    </div>
+            `
+            cartElem.appendChild(cartDiv);
+            let subTotal = cartItem.price * cartItem.qty
+            total+=subTotal
+        })
+
+        document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`
+        
+      }
+
+      function updateQty(id, num) {
+        const updatedItem = cartList.find((item)=>item.id ==id)
+        if (updatedItem) {
+            updatedItem.qty += num
+
+            if (updatedItem.qty<1) {
+                removeItem(id)
+            }
+
+        
+        
+        }
+        displayCart()    
+      }
+
+      function removeItem(id) {
+        cartList = cartList.filter((item) => item.id !== id)
+        
+        displayCart()
+        
+      }
+
+      function toggleCart(){
+        const cartDiv = document.getElementById('cartContainer')
+        cartDiv.classList.toggle('hidden')
+      }
+
+      function cartCount() {
+        let count = cartList.length
+        document.getElementById('cartCount').innerText = count
+      }
+      document.addEventListener('DOMContentLoaded',()=>{displyProduct()})
+
+    </script>
+</body>
+</html>

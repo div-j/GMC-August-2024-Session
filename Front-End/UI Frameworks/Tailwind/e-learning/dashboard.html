@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashoboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#2489D3',
+                background:"#F8F8F8",
+                nav:"#242730",
+                
+              },
+              gradientColorStopPositions: {
+        33: '33%',
+      },
+              screens: {
+                "small": '600px',
+               
+              }
+            }
+          }
+        }
+
+      </script>
+</head>
+<body class="bg-background  flex justify-center items-center h-dvh">
+
+    <main class="max-w-4/5 flex bg-white h-[80svh] mt-4">
+       
+        <nav class=" relative text-xs bg-indigo-900 py-20 pl-16  text-white rounded-2xl " >
+            <div class="absolute  -top-20 -left-10">
+                <img src="./magnifier/magnifier.png" alt="" width="">
+            </div>
+            <ul>
+                <li class=" bg-white text-black pl-8 pr-16 py-4 rounded-l-full">
+                    <a href=""><span><img src="./navbar-icons/navbar-icons/home.png" alt="" class="inline"></span> Dashboard</a></li>
+
+                <li class="pl-8 pr-16 py-4 ">
+                    
+                    
+                    <a href="">
+                        <span><img src="./navbar-icons/navbar-icons/eplore.png" alt="" class="inline"></span> 
+                        Explore</a>
+                </li>
+                
+                <li class="pl-8 pr-16 py-4 ">
+                    <a href="">
+                        <span><img src="./navbar-icons/navbar-icons/book.png" alt="" class="inline"></span> 
+                        Dictionary
+                    </a>
+                </li>
+                <li class="pl-8 pr-16 py-4 ">
+                    <a href="">
+                        <span><img src="./navbar-icons/navbar-icons/date.png" alt="" class="inline"></span> 
+                        Shcedule
+                    </a>
+                </li>
+                <div class="pl-8 pr-16 py-4">
+                    <hr>
+                </div>
+                <li class="pl-8 pr-16 py-4 ">
+                    <a href="">
+                        <span><img src="./navbar-icons/navbar-icons/set.png" alt="" class="inline"></span> 
+                        Settings
+                    </a>
+                </li>
+                <li class="pl-8 pr-16 py-4 ">
+                    <a href="">
+                        <span><img src="./navbar-icons/navbar-icons/log out.png" alt="" class="inline"></span> 
+                        Log Out
+                    </a>
+                </li>
+           
+            </ul>
+      
+            
+        </nav>
+        <section>
+            <div>
+
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

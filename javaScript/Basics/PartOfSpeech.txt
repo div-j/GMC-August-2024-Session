@@ -1,0 +1,7 @@
+Parts of speech of javascript
+
+syntax and rules'
+comments
+keywords
+operators
+values/variables

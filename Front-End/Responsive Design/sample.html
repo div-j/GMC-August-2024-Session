@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: larger;
+        }
+        #container{
+           display: grid;
+      grid-template-columns: 50% auto auto;
+    
+           gap: 10px;
+        }
+        h3::before{
+            content: 'I am the desktop view';
+        }
+
+        /* tablet devices */
+        @media screen and (max-width: 768px) {
+            h3::before{
+                content: "I am the Tablet view";
+            }
+            #container{
+                display: grid;
+                grid-template-columns: 60% 40%;
+            }
+            
+        }
+
+        /* mobile devices */
+        @media only screen and (max-width: 600px) {
+            h3::before{
+                content: "I am the mobile view";
+            }
+            body{
+                background-color: yellow;
+                color: black;
+                font-size: small;
+            }
+
+            #container{
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+
+        .bi-whatsapp{
+                color: lightgreen;
+                
+            }
+            .bi-facebook{
+                color: skyblue;
+            }
+
+            .bi-instagram{
+                color: purple;
+            }
+            footer{
+                height: 80px;
+                background: darkblue;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 5px;
+                
+
+                a{
+                    color: white;
+                }
+            }
+#hero{
+    text-align: center;
+}
+header{
+    a{
+        background-color: tomato;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    nav{
+        margin: 10px 0px;
+
+    }
+    text-align: center;
+
+}
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+    </nav>
+
+
+
+    <div id="hero">
+
+        <h1>Welcome to Divine's Kitchen</h1>
+        <p>Taste makes a difference</p>
+    </div>
+</header>
+<h3></h3>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eveniet laudantium corporis iste sapiente voluptates quia beatae illum at ducimus harum accusamus ullam autem eius delectus fugiat, maiores nemo amet?</p>
+
+    <section id="container">
+        <div>
+            <h2>Articles</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut harum voluptates modi optio voluptate atque dicta, autem saepe eum perspiciatis laborum architecto. Ipsum impedit, distinctio aliquid eum rem pariatur deserunt.
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem maiores totam, in facere quam qui vel optio libero dolores natus modi fugiat velit iure non ex consequatur minima eligendi consequuntur!
+            </p>
+        </div>
+
+        <aside>
+            <h2>Side content</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia error, corporis facilis, ipsam deleniti nam laboriosam voluptates eligendi aut numquam aperiam cumque eos fugiat dolorum non id reiciendis iste nihil.
+        </aside>
+
+        <aside>
+            <h2>News</h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum non reiciendis excepturi distinctio qui quasi maxime eius doloribus obcaecati soluta? Distinctio quos similique unde porro quae eaque molestiae minus assumenda.
+            </p>
+        </aside>
+
+    </section>
+
+    <footer>
+        <div>
+            <a href="http://whatsapp.com">
+               whatsapp <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+        <div>
+            <a href="http://facebook.com">
+            facebook    <i class="bi bi-facebook"></i>
+            </a>
+        </div>
+        <div>
+            <a href="http://instagram.com">
+             instagram   <i class="bi bi-instagram"></i>
+            </a>
+        </div>
+    </footer>
+    
+</body>
+</html>

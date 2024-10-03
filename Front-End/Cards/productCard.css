@@ -1,0 +1,39 @@
+div {
+  width: 30%;
+  border: 1px solid #f1f1f1;
+  padding: 15px;
+  h3,
+  p {
+    margin: 0;
+  }
+  p {
+    line-height: 24px;
+  }
+}
+.bi {
+  color: orange;
+}
+.down {
+  color: black;
+}
+#icons {
+  margin: 10px 0;
+}
+#price {
+  font-size: 30px;
+}
+.discount,
+sup {
+  color: #565959;
+}
+button {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 10px;
+}
+#cards{
+  display: flex;
+  gap: 10px;
+}

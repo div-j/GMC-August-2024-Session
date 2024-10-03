@@ -16,57 +16,62 @@
     </header>
 
     <!-- main component -->
-    <main>
+    <main id="outer-flex-container">
       <!-- navigation component -->
-      <nav>
-        <ul>
-          <li id="active"><a href="#">Stylesheet 1</a></li>
-          <li><a href="#">Stylesheet 2</a></li>
-          <li><a href="#">Stylesheet 3</a></li>
-          <li><a href="#">Stylesheet 4</a></li>
-          <li><a href="#">No Stylesheet</a></li>
-        </ul>
-      </nav>
-
-      <!-- main content component -->
-      <div id="main-content">
-        <!-- section one -->
-
-        <section>
-          <h1>Same Page Different Stylesheets</h1>
+       <div id="inner-flex-container">
+          <nav>
+            <ul>
+              <li id="active"><a href="#">Stylesheet 1</a></li>
+              <li><a href="#">Stylesheet 2</a></li>
+              <li><a href="#">Stylesheet 3</a></li>
+              <li><a href="#">Stylesheet 4</a></li>
+              <li><a href="#">No Stylesheet</a></li>
+            </ul>
+          </nav>
+    
+          <!-- main content component -->
+          <div id="main-content">
+            <!-- section one -->
+    
+            <section>
+              <h1>Same Page Different Stylesheets</h1>
+              <p>
+                This is a demonstration of how different stylesheets can change the
+                layout of your HTML page. You can change the layout of this page by
+                selecting different stylesheets in the menu, or by selecting one of
+                the following links: <br />
+                <a href="#">Stylesheet1</a>
+                <a href="#">Stylesheet2</a>
+                <a href="#">Stylesheet3</a>
+                <a href="#">Stylesheet4</a>
+              </p>
+            </section>
+    
+            <!-- section two -->
+            <section>
+              <h2>No Styles</h2>
+              <p>
+                This page uses DIV elements to group different sections of the HTML
+                page. Click here to see how the page looks like with no stylesheet:
+                <a href="#">No Stylesheet.</a>
+              </p>
+            </section>
+          </div>
+       </div>
+      
+              <!-- aside component -->
+        <aside>
+          <h3>Side-Bar</h3>
           <p>
-            This is a demonstration of how different stylesheets can change the
-            layout of your HTML page. You can change the layout of this page by
-            selecting different stylesheets in the menu, or by selecting one of
-            the following links: <br />
-            <a href="#">Stylesheet1</a>
-            <a href="#">Stylesheet2</a>
-            <a href="#">Stylesheet3</a>
-            <a href="#">Stylesheet4</a>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat.
           </p>
-        </section>
-
-        <!-- section two -->
-        <section>
-          <h2>No Styles</h2>
-          <p>
-            This page uses DIV elements to group different sections of the HTML
-            page. Click here to see how the page looks like with no stylesheet:
-            <a href="#">No Stylesheet.</a>
-          </p>
-        </section>
-      </div>
+        </aside>
+  
     </main>
 
-    <!-- aside component -->
-    <aside>
-      <h3>Side-Bar</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat.
-      </p>
-    </aside>
+ 
 
     <!-- footer component -->
     <footer>

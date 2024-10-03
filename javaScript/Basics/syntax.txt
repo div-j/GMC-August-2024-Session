@@ -1,0 +1,20 @@
+rule 1
+age is not same as Age, thus javascript is case sencitive
+more examples:
+name isnt same as Name
+Car is not same as CaR
+
+rule 2
+javascript runs line by line, thus an error above will prevent the others below from running
+for example:
+message = "I went to see my babe yesterday 
+so couldnt make it to class"
+
+rule 3
+block of codes are wrapped in curly braces that is {}
+
+rule 4
+white spaces are ignored but can be used or are used for clarity 
+
+rule 5
+semicolon (;) stands for end of a state or code

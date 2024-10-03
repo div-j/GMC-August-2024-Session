@@ -1,0 +1,22 @@
+comments explain codes to other or ourselfs which also reference
+comments are not executed they ignored
+also if you want a code to be ignored, just comment them out.
+
+types of comments
+
+1. Single line comment
+//name = "john"
+
+//below is a student profile
+name = "John"
+age = 30
+sex = "male"
+
+2. Multi line comment
+
+example
+/* the code below is a message
+about heaven and hell.
+Listen to them and chose where to go */
+message = "Heaven is real, thus be born a new"
+
