@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>e-learing : Home page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2489D3",
+              background: "#F8F8F8",
+              stepho: "mediumseagreen",
+            },
+            screens: {
+              small: "600px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <!-- <nav class="bg py-2 pl-6 flex flex-wrap justify-between items-center">
+      <div class="">
+        <img src="./e-learning assets/logo.png" alt="" class="inline w-10" />
+        <span class="text-primary font-semibold text-sm"> Pro-skills</span>
+      </div>
+      <div class="md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#000000"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </div>
+      <div class="font-semibold text-sm flex flex-wrap gap-4 hidden md:flex">
+        <a href="">Home</a>
+        <a href="">Classes</a>
+        <a href="">Plans</a>
+        <a href="">About Us</a>
+        <div class="mx-12">
+          <a href="" class="mr-2 text-primary outline rounded-full px-5 py-1"
+            >login</a
+          >
+          <a href="" class="text-white bg-primary rounded-full px-5 py-1"
+            >sign up</a
+          >
+        </div>
+      </div>
+    </nav> -->
+
+    <main  class="flex justify-center items-center h-dvh bg-background">
+        <section class="w-3/5 shadow-2xl bg-white  rounded-2xl p-4 ">
+          <div class=" flex flex-col items-center justify-center">
+            <a href="./index.html"><img src="./e-learning assets/logo.png" alt="" /></a>
+            <p class="mt-2 text-sm"> Sign in Your Account</p>
+          </div>
+          <form action="">
+            <div class="mt-4">
+                <label class="font-semibold " for="email">Username</label>
+                <input class="mt-2 outline-none focus:outline-primary w-full bg-background rounded-sm" type="text" name="email" />
+            </div>
+            <div>
+                <label class="font-medium " for="pwd">Email</label>
+                <input class="outline-none focus:outline-primary mt-2  w-full bg-background rounded-sm "type="email" name="pwd" />
+            </div>
+            <div>
+                <label class="font-medium " for="pwd">Password</label>
+                <input class="outline-none focus:outline-primary mt-2  w-full bg-background rounded-sm "type="password" name="pwd" />
+            </div>
+    
+            <button class=" mt-6 bg-primary w-full rounded-lg text-sm font-semibold text-white p-1" type="submit">Login</button>
+            <p class="text-xs mt-2">Already have an account? <a href="./loginPage.html" class="underline">Sign in</a> </p>
+        
+          </form>
+        </section>
+    </main>
+  </body>
+</html>

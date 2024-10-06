@@ -36,10 +36,10 @@ ul {
   margin: 8px 0;
 }
 
-main {
+/* main {
   display: flex;
   gap: 24px;
-}
+} */
 aside{
   background-color: #32a4e7;
   color: #ffffff;
@@ -58,3 +58,27 @@ footer{
   border: solid 1px #d4d4d4;
 }
  
+@media screen and (min-width: 929px) {
+  #outer-flex-container{
+    display: flex;
+    gap: 10px;
+  }
+  aside{
+width: 40%;
+  }
+}
+
+@media screen and (max-width:450px) {
+  #inner-flex-container{
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li{
+    width: 100%;
+  }
+}
+
+  #inner-flex-container{
+    display: flex;
+    gap: 10px;
+  }

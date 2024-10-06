@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              gold: "#DAA520",
+              grey: "#808080",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+
+        #a {
+          @apply bg-black w-40 h-40;
+        }
+        body {
+          background: linear-gradient(135deg, #153677, #4e085f);
+        }
+        #content p{
+            @apply bg-gray-400 py-2 pl-8 font-bold mb-2 rounded-md
+        }
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center h-screen">
+    <main class="bg-white w-3/4 pt-14 rounded-md px-8 pb-20">
+      <h1 class="text-2xl font-bold mb-4">TODO LIST 📝</h1>
+      <div
+        class="pl-3 h-10 bg-[#edeef0] w-full flex items-center rounded-full mb-4"
+      >
+
+        <input
+          id="input"
+          type="text"
+          class="w-full px-4 outline-none bg-transparent"
+          placeholder="add your task"
+        /> 
+        <button
+          onclick="addTask()"
+          class="bg-green-700 text-white py-2 px-8 rounded-full"
+        >
+          Add
+        </button>
+
+      </div>
+      <section id="content">
+    
+      </section>
+    </main>
+
+    <script>
+      let sec = document.getElementById("content");
+      let div = document.createElement("div");
+      let inputElem = document.getElementById("input");
+
+    
+
+      sec.append(div);
+      let tasks = ['a','b','j'];
+
+      function addTask() {
+
+        let inputElem = document.getElementById("input");
+        let inputValue = inputElem.value
+        tasks.push(inputValue);
+        inputElem.value = "";
+
+        console.log(tasks);
+
+        let p = document.createElement("p");
+        lastItem = tasks.length-1
+        p.textContent = tasks[lastItem];
+        div.appendChild(p);
+
+
+
+        let span = document.createElement('span')
+        let i = document.createElement('i')
+        let i2 = document.createElement('i')
+        i.className = "bi text-white bg-red-500 px-1 bi-x-lg"
+        i2.className = "bi bi-pencil-square bg-blue-500 text-white px-1 rounded ml-4 mr-8 "
+        span.className = "float-right"
+        span.append(i,i2)
+        p.appendChild(span)
+
+        //delete a task
+        i.onclick = function () {
+        div.removeChild(p)
+        }
+
+        //update a task
+     
+        i2.onclick = function () {
+          newTask = prompt('Edit task:', p.textContent)
+          p.textContent = newTask
+          p.appendChild(span)
+          let a = tasks.indexOf(p.textContent)
+    
+          tasks[a] = newTask;
+
+        }
+console.log(tasks);
+
+
+      }
+
+//       function createTaskElem(task) {
+//         let h1 = document.createElement('h1')
+//         h1.textContent = task
+//         div.appendChild(h1)
+//       }
+
+//       function createTask(item) {
+//         tasks.push(item)
+//         return item  
+//       }
+
+//       function addItem() {
+//         let newItem = createTask(inputElem.value)
+//         console.log(newItem);
+        
+//         inputElem.value = "";
+//         console.log(tasks);
+//         createTaskElem(newItem)
+//       }
+
+// tasks.forEach(createTaskElem)
+
+
+
+     
+      
+
+      
+
+
+
+
+
+   
+    </script>
+  </body>
+</html>

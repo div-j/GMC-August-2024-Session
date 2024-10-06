@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              gold: "#DAA520",
+              grey: "#808080",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="flex text-white justify-center items-center h-screen 
+  ">
+
+    <main class="bg-black   p-4 rounded-md border border-1 border-['#841010'] ">
+    <h1 class="text-2xl font-bold text-white text-center mb-4 ">Calculator</h1>
+
+      <section id="">
+        <input id="output" type="text" class="h-16 text-black rounded-md text-2xl text-right mb-2 p-1 bg-['#cccccc'] w-full" placeholder="0" />
+      </section>
+      <form class=" flex flex-col items-center justify-center gap-4">
+        <!-- //first row -->
+
+        <div>
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" id="clear" type="button" value="C" />
+          <input id="backspace" type="button" value="←"  class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20"/>
+          <input onclick="appendValue('%')"" type="button" value="Mod" class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20"/>
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-gold w-20" id="x"  onclick="appendValue('/')"  type="button" value="/" />
+        </div>
+
+        <div id="second-row">
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue('7')" type="button" value="7" />
+          <input class="p-4 text-lg text-black cursor-pointer rounded-full bg-white w-20" onclick="appendValue('8')" type="button" value="8" />
+          <input onclick="appendValue('9')" type="button" value="9" class="p-4 text-lg cursor-pointer bg-white rounded-full text-black w-20" />
+          <input onclick="appendValue('*')" type="button" value="*"  class="p-4 text-lg cursor-pointer rounded-full bg-gold w-20"/>
+        </div>
+        <div>
+            <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue(4)" type="button" value="4" />
+            <input class="p-4 text-lg cursor-pointer text-black rounded-full bg-white w-20" onclick="appendValue(5)" type="button" value="5" />
+            <input class="p-4 text-lg cursor-pointer text-black bg-white  rounded-full bg-grey w-20" onclick="appendValue(6)" type="button" value="6" />
+            <input class="p-4 text-lg cursor-pointer rounded-full bg-gold w-20" onclick="appendValue('-')" type="button" value="-" />
+        </div>
+
+        <div>
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue('1')" type="button" value="1" />
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-white text-black w-20" onclick="appendValue('2')" type="button" value="2" />
+          <input class="p-4 text-lg text-black cursor-pointer rounded-full bg-white w-20" onclick="appendValue('3')" type="button" value="3" />
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-gold w-20" onclick="appendValue('+')" type="button" value="+" />
+        </div>
+        <div>
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue('00')" type="button" value="00" />
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue('0')" type="button" value="0" />
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-grey w-20" onclick="appendValue('.')" type="button" value="." />
+          <input class="p-4 text-lg cursor-pointer rounded-full bg-gold w-20" onclick="calculate()" type="button" value="=" />
+        </div>
+      </form>
+    </main>
+
+    <!-- <script src="index.js"></script> -->
+    <script src="index2.js"></script>
+  </body>
+</html>

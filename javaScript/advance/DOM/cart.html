@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              gold: "#DAA520",
+              grey: "#808080",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss"></style>
+  </head>
+  <body>
+    <!-- card -->
+    <nav class="sticky top-0">
+      <ul class="bg-blue-800 flex justify-between p-2 text-white">
+        <div class="flex space-x-6">
+          <li class="hover:text-blue-200 cursor-pointer">Home</li>
+          <li class="hover:text-blue-200 cursor-pointer">About</li>
+          <li class="hover:text-blue-200 cursor-pointer">Contact</li>
+        </div>
+
+        <li class="hover:text-blue-200 cursor-pointer relative float-right">
+          <i class="bi bi-cart"></i>
+          <span
+            class="absolute bg-red-500 -top-2 -right-2 rounded-full text-xs flex items-center justify-center w-4 h-4"
+            >0</span
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container flex gap-6 mx-auto w-3/4">
+      <section id="m" class="w-3/4 grid grid-cols-2 gap-6"></section>
+      <section id="cart-cont">
+        <div id="total"></div>
+      </section>
+    </main>
+
+    <script>
+      products = [
+        {
+          id: 1,
+          name: "Wireless Bluetooth Headphones",
+          price: 49.99,
+          category: "Electronics",
+          description:
+            "High-quality wireless headphones with noise-cancelling feature and up to 20 hours of battery life.",
+        },
+        {
+          id: 2,
+          name: "Smart LED TV 50 inch",
+          price: 399.99,
+          category: "Electronics",
+          description:
+            "50-inch 4K Ultra HD Smart LED TV with built-in apps and streaming services.",
+        },
+        {
+          id: 3,
+          name: "Stainless Steel Water Bottle",
+          price: 19.99,
+          category: "Home & Kitchen",
+          description:
+            "Reusable stainless steel water bottle with a 750ml capacity and leak-proof lid.",
+        },
+        {
+          id: 4,
+          name: "Gaming Laptop",
+          price: 1299.99,
+          category: "Computers",
+          description:
+            "High-performance gaming laptop with 16GB RAM, 512GB SSD, and NVIDIA GeForce RTX graphics.",
+        },
+        {
+          id: 5,
+          name: "Running Shoes",
+          price: 69.99,
+          category: "Sports & Outdoors",
+          description:
+            "Lightweight and durable running shoes with cushioned soles for extra comfort.",
+        },
+        {
+          id: 6,
+          name: "Coffee Maker",
+          price: 89.99,
+          category: "Home & Kitchen",
+          description:
+            "Automatic drip coffee maker with programmable settings and a 12-cup capacity.",
+        },
+        {
+          id: 7,
+          name: "Wireless Mouse",
+          price: 24.99,
+          category: "Computers",
+          description:
+            "Ergonomic wireless mouse with adjustable DPI and long-lasting battery life.",
+        },
+        {
+          id: 8,
+          name: "Electric Standing Desk",
+          price: 299.99,
+          category: "Furniture",
+          description:
+            "Height-adjustable electric standing desk with memory presets and a spacious desktop.",
+        },
+        {
+          id: 9,
+          name: "Organic Cotton Bed Sheets",
+          price: 59.99,
+          category: "Home & Kitchen",
+          description:
+            "Soft and breathable organic cotton bed sheets, available in queen and king sizes.",
+        },
+        {
+          id: 10,
+          name: "Portable Bluetooth Speaker",
+          price: 39.99,
+          category: "Electronics",
+          description:
+            "Compact and waterproof Bluetooth speaker with a 10-hour battery life and powerful bass.",
+        },
+      ];
+
+      var main = document.getElementById("m");
+
+      products.forEach((prod) => {
+        let d = document.createElement("div");
+        d.className = "rounded-md bg-gray-300 border p-3 my-2 ";
+        d.innerHTML = `
+            <h1 class="text-2xl">${prod.name}</h1>            
+            <h3 class="text-blue-400 ">${prod.price}</h3>
+            <p class="mt-4"> ${prod.description} </p>
+            <button onClick = "addToCart(${prod.id})" id='cb' class=" cb mt-2 rounded text-white bg-red-500 px-2 ">add to cart</button>
+            `;
+        main.appendChild(d);
+      });
+
+      cartList = [];
+      let span = document.querySelector("span");
+
+      function addToCart(id) {
+        let cartProd = products.find((product) => product.id === id);
+        cartList.push(cartProd);
+        span.innerText = cartList.length;
+        console.log(cartList);
+
+        let sec = document.querySelector("#cart-cont");
+        lastItem = cartList.length - 1;
+        item = cartList[lastItem];
+        sec.innerHTML += `
+     <div class="flex px-2 mt-2 gap-4 bg-gray-800 text-white w-full">
+                <h1>${item.name}</h1>
+                <p>${item.price}</p>
+     </div>
+     
+
+`;
+        total = 0;
+        cartList.forEach((item) => (total += item.price));
+      
+        
+
+        document.getElementById("total").innerHTML = `
+  <h1 class="font-bold">Total Price:  <span id=""> ${total} </span>
+</h1>
+       </div>
+
+`;
+      }
+    </script>
+  </body>
+</html>

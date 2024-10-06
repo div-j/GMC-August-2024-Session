@@ -1,0 +1,30 @@
+Keywords are reserved words in javascript
+they have specific or special purposes
+And they cant be used anyhow 
+
+List of Keywords
+
+boolean, length ,typeof, if, else, continue
+new, return, break, function, class, delete, var
+let, const, void, string, number, undefined
+double	else	enum*	eval
+export*	extends*	false	final
+finally	float	for	function
+goto	if	implements	import*
+in	instanceof	int	interface
+let*	long	native	new
+null	package	private	protected
+public	return	short	static
+super*	switch	synchronized	this
+throw	throws	transient	true
+try	typeof	var	void
+volatile	while	with	yield
+
+examples
+country ="Nigeria" //works fine
+stop = "to discontinue" // works fine
+
+break = "to stop" //error: expected expression, got keyword
+if ="condition" //error: expected expression, got keyword
+
+

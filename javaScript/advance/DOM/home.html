@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <label for="">Name</label>
+    <input onchange="show()" id="name" type="text" />
+    <p id="p"></p>
+    <script>
+    
+    function show() {
+      let myValue = document.getElementById("name").value;
+      document.getElementById("p").innerHTML = myValue ;
+        
+    }
+      
+    </script>
+  </body>
+</html>

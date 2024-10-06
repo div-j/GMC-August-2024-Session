@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2489D3",
+              background: "#f8f8f8",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="bg-background  flex justify-center items-center h-dvh">
+      <section class=" w-3/5 bg-white p-8">
+        <div class="flex items-center justify-center mb-8">
+          <img src="./e-learning assets/logo.png" alt="" />
+        </div>
+        <form action="">
+          <p class="text-center">Sent Opt on Your Mail</p>
+          <div class=" w-full flex justify-center items-center gap-2  mt-2">
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+            <input type="text" class="bg-background border-[1px]  w-[16%] focus:outline-primary text-center rounded-sm" placeholder="-" />
+
+          
+         
+        </div>
+        <p class="text-xs text-center mb-8"><a href="./otp.html" >resend otp</a></p>
+          <button type="submit" class="bg-primary text-white w-full rounded-lg my-2 " >Submit</button>
+          <p class="text-xs text-right"><a href="./loginPage.html">Back to Login Page</a></p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
